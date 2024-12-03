@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title></title>
-  </head>
-  <body>
+<html lang="en">
 
-  <header>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos en JS</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="filter">
+      <label for="name">Name</label>
+      <input type="text" id="search" class="input" />
+    </div>
+    <div class="filter">
+      <label for="sugarless-checkbox">Sugarless</label>
+      <input type="checkbox" id="sugarless-checkbox" />
+    </div>
+    <select name="order" id="order-by" class="select">
+      <option value="default">Default</option>
+      <option value="name">Name</option>
+      <option value="price">Price</option>
+    </select>
   </header>
+  <div class="main">
+    <div id="products-list" class="products"></div>
+    <h2 id="no-products">No Products</h2>
+  </div>
 
-  <main>
-  </main>
-  <script src="./js/scripts.js"></script>
-  </body>
+  <script type="module" src="./js/index.js"></script>
+</body>
+
 </html>
