@@ -130,19 +130,7 @@ const filterProductsBySugarless = event => {
     return;
   }
 
-/*   const filteredProducts = PRODUCTS.filter((product) => {
-    if (product.sugarless) {
-      return true;
-    } else {
-      return false;
-    }
-  });
-
-  printProducts(filteredProducts);
-} */
-
-// // 3. Si el checkbox está marcado, procedemos a filtrar los productos sin azúcar
-  
+// Si el checkbox está marcado, procedemos a filtrar los productos sin azúcar
   const filteredProducts = PRODUCTS.filter(product => product.sugarless);
   printProducts(filteredProducts);
 };
@@ -153,7 +141,6 @@ const filteredProductsByName = event => {
   resetOrderBy();
 // // 1. Obtener el valor de búsqueda (lo que el usuario ingresa en el campo de texto)
   const search = event.target.value;
-
 // 2. Si no hay texto en el campo de búsqueda, mostramos todos los productos
   if (!search) {
     printProducts(PRODUCTS);
@@ -169,11 +156,11 @@ const sortBy = event => {
   resetSearch();
 // 1. Obtener el valor del menú desplegable (la opción seleccionada)
   const order = event.target.value;
-// 2. *** NUEVO! SPREAD OPERATOR *** Crear una copia del array de productos para no modificar el array original. 
+// 2. *** SPREAD OPERATOR *** Crear una copia del array de productos para no modificar el array original
   const sortedProducts = [...PRODUCTS];
 
   if (order === 'name') {
-   // Ordenar alfabéticamente por el nombre de los productos
+    // Ordenar alfabéticamente por el nombre de los productos
     // localeCompare: Este método es muy útil cuando necesitas realizar ordenaciones que respeten las reglas del idioma, como en la comparación de nombres, direcciones, o cualquier tipo de texto en una aplicación multilingüe
     sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
   } else if (order === 'price') {
